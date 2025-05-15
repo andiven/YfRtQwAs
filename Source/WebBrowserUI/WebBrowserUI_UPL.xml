@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+	<proguardAdditions>
+		<insert>
+-keep class com.epicgames.unreal.WebInterfaceViewControl {
+	public *;
+}
+
+-keep class com.epicgames.unreal.WebInterfaceViewControl$ViewClient {
+	public *;
+}
+
+-keep class com.epicgames.unreal.WebInterfaceViewControl$ChromeClient {
+	public *;
+}
+
+-keep class com.epicgames.unreal.WebInterfaceViewControl$FrameUpdateInfo {
+	public *;
+}
+
+-keep class com.epicgames.unreal.WebInterfaceViewControl$InterceptedResponseHeaders {
+	public *;
+}
+		</insert>
+	</proguardAdditions>
+	<resourceCopies>
+		<copyDir src="$S(PluginDir)/Java" dst="$S(BuildDir)" />
+	</resourceCopies>
+	<androidManifestUpdates>
+		<addPermission android:name="android.permission.INTERNET" />
+	</androidManifestUpdates>
+</root>
